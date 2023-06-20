@@ -4,7 +4,7 @@ FROM incubit/php74-mysql-laravel-nginx:latest
 RUN apk add --no-cache \
                 $PHPIZE_DEPS \
                 openssl-dev
-RUN pecl install mongodb
+RUN pecl install mongodb-1.15.3
 RUN docker-php-ext-enable mongodb
 
 COPY ./docker-compose/supervisord/supervisord.ini /etc/supervisor.d/supervisord.ini
